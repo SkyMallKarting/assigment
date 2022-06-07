@@ -13,3 +13,13 @@ C:\Users\ProDesk\Hekki\obj\Debug\net6.0\refint\Hekki.dll
 C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.pdb
 C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.genruntimeconfig.cache
 C:\Users\ProDesk\Hekki\obj\Debug\net6.0\ref\Hekki.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.csproj.CopyComplete
