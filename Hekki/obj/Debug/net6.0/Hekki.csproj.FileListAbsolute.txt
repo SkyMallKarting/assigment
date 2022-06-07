@@ -1,0 +1,15 @@
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Hekki.exe
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Hekki.deps.json
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Hekki.runtimeconfig.json
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Hekki.dll
+C:\Users\ProDesk\Hekki\bin\Debug\net6.0\Hekki.pdb
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.csproj.AssemblyReference.cache
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.AssemblyInfoInputs.cache
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.AssemblyInfo.cs
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.csproj.CoreCompileInputs.cache
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.dll
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\refint\Hekki.dll
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.pdb
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\Hekki.genruntimeconfig.cache
+C:\Users\ProDesk\Hekki\obj\Debug\net6.0\ref\Hekki.dll
