@@ -8,17 +8,10 @@ namespace Hekki
         const int keyRow = 3;
         public static IXLWorksheet GetWorkSheet()
         {
-            Process[] processCollection = Process.GetProcesses();  
-            foreach (Process p in processCollection)  
-            {  
-                if ( p.ProcessName == "EXCEL")
-                {
-                    p.Kill();
-                }
-            }  
-            using var wbook = new XLWorkbook(_path);
+            CloseExcelIfOpened();
+            var wbook = new XLWorkbook(_path);
             var ws1 = wbook.Worksheet(1); 
-
+           // var namesCells = GetIndexsByValue(ws1, "Имя");
             return ws1;
         }
 
@@ -40,6 +33,23 @@ namespace Hekki
                 pilotNames.Add(workSheet.Cell(i, column).GetValue<string>());
             }
             return pilotNames;
+        }
+
+        private static void CloseExcelIfOpened()
+        {
+            Process[] processCollection = Process.GetProcesses();  
+            foreach (Process p in processCollection)  
+            {  
+                if ( p.ProcessName == "EXCEL")
+                {
+                    p.Kill();
+                }
+            }  
+        }
+
+        public static void WriteValueInColumn()
+        {
+            
         }
     }
 }
