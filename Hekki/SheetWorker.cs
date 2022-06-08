@@ -4,7 +4,7 @@ namespace Hekki
 {
     class SheetWorker 
     {
-        const string _path = "C:\\Users\\ProDesk\\Desktop\\Stuff(Документы)\\Соревнования\\соревы больше 12.xlsx";
+        const string _path = "C:\\Users\\ProDesk\\Desktop\\Stuff(Документы)\\Соревнования\\соревыБольше12.xlsx";
         const int keyRow = 3;
         public static XLWorkbook GetWorkBook()
         {
@@ -58,12 +58,13 @@ namespace Hekki
             {
                 if (pilot.Name == "1")
                 {
-                    //workSheet.Cell(rowIndexToStart, column).SetValue(pilot.Name).RichText.SetFontColor(XLColor.White);
                     workSheet.Cell(rowIndexToStart, column).SetValue(pilot.Name).RichText.SetFontColor(XLColor.White);
+                    workSheet.Cell(rowIndexToStart, column - 2).SetValue(pilot.Name).RichText.SetFontColor(XLColor.White);
                     rowIndexToStart++;
                     continue;
                 }
                 workSheet.Cell(rowIndexToStart, column).Value = pilot.Name;
+                workSheet.Cell(rowIndexToStart, column - 2).Value = pilot.GetNumberKartByRace(numberRace);
                 rowIndexToStart++;
             }
         }

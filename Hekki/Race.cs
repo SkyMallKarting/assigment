@@ -13,11 +13,6 @@ namespace Hekki
             {
                 DoAssignmentToGroup(groups[i], numbers, numberRace);
                 SheetWorker.WriteValueInColumn(workSheet, groups[i], numberRace);
-                System.Console.WriteLine($"Хит {numberRace + 1}, группа {i + 1}");
-                foreach (var line in Pilot.GetGroupInfo(groups[i], numberRace))
-                {
-                    Console.WriteLine(line);
-                }
             } 
         }
 
@@ -37,7 +32,6 @@ namespace Hekki
                     {
                         group[j].AddNumberKart(copyNumbersOfKarts[k], numberRace);
                         copyNumbersOfKarts.RemoveAt(k);
-                        //group[j].GetInfo();
                         break;
                     }
                     k++;
@@ -49,7 +43,6 @@ namespace Hekki
                     group[i].AddNumberKart(0, numberRace);
                 DoAssignmentToGroup(group, numbersOfKarts, numberRace);
             }
-           //Show(group);
         }
 
         private static List<List<Pilot>> DevideByGroup(List<Pilot> pilots, List<int> numbersOfKarts)

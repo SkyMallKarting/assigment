@@ -32,6 +32,11 @@ namespace Hekki
             return true;
         }
 
+        public string GetNumberKartByRace(int numberRace)
+        {
+            return _usedKarts[numberRace].ToString();
+        }
+
         public string GetInfo()
         {
             string res = _name;
