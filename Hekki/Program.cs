@@ -2,7 +2,8 @@
 
 List<int> numbersKarts = new List<int>() {1, 2, 3, 4, 5, 6, 7, 8};
 List<Pilot> pilots = new List<Pilot>();
-var workSheet = SheetWorker.GetWorkSheet();
+var workBook = SheetWorker.GetWorkBook();
+var workSheet = workBook.Worksheet(1);
 var pilotsNames = SheetWorker.ReadNames(workSheet);
 foreach (var pilotName in pilotsNames)
 {
@@ -10,16 +11,16 @@ foreach (var pilotName in pilotsNames)
 }
     //Console.WriteLine("Введите, что бы рассчитать следующий этап");
     //Console.ReadKey();
-Race.Start(pilots, numbersKarts, 0);
-Console.WriteLine("________________________________________");
-Race.Start(pilots, numbersKarts, 1);
-Console.WriteLine("________________________________________");
-Race.Start(pilots, numbersKarts, 2);
-Console.WriteLine("________________________________________");
-Console.WriteLine("________________________________________");
-   // foreach (var item in pilots)
-       // System.Console.WriteLine(item.GetInfo());
-    
-    Console.WriteLine();
+Race.Start(pilots, numbersKarts, 0, workSheet);
 
+Race.Start(pilots, numbersKarts, 1, workSheet);
+
+Race.Start(pilots, numbersKarts, 2, workSheet);
+
+//Console.WriteLine("________________________________________");
+// foreach (var item in pilots)
+// System.Console.WriteLine(item.GetInfo());
+    
+Console.WriteLine();
+workBook.Save();
   

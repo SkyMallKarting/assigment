@@ -1,14 +1,18 @@
+using ClosedXML.Excel;
+using System.Diagnostics;
 namespace Hekki
 {
     class Race
     {
+        public const int MaxOfKarts = 8;
         private static Random rng = new Random();  
-        public static void Start(List<Pilot> pilots, List<int> numbers, int numberRace)
+        public static void Start(List<Pilot> pilots, List<int> numbers, int numberRace, IXLWorksheet workSheet)
         {
             List<List<Pilot>> groups = DevideByGroup(pilots, numbers);
             for (int i = 0; i < groups.Count; i++)
             {
                 DoAssignmentToGroup(groups[i], numbers, numberRace);
+                SheetWorker.WriteValueInColumn(workSheet, groups[i], numberRace);
                 System.Console.WriteLine($"Хит {numberRace + 1}, группа {i + 1}");
                 foreach (var line in Pilot.GetGroupInfo(groups[i], numberRace))
                 {
