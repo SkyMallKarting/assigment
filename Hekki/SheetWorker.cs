@@ -6,6 +6,8 @@ namespace Hekki
     {
         const string _path = "C:\\Users\\ProDesk\\Desktop\\Stuff(Документы)\\Соревнования\\соревыБольше12.xlsx";
         const int keyRow = 3;
+        private static int _rowsInGroup = 8;
+        
         public static XLWorkbook GetWorkBook()
         {
             CloseExcelIfOpened();
@@ -13,7 +15,7 @@ namespace Hekki
             return wbook;
         }
 
-        private static List<IXLCell> GetIndexsByValue(IXLWorksheet workSheet, string value)
+        public static List<IXLCell> GetIndexsByValue(IXLWorksheet workSheet, string value)
         {
             var cells = workSheet.Row(keyRow).Search(value);
             return cells.ToList();
@@ -21,10 +23,10 @@ namespace Hekki
 
         public static List<string> ReadNames(IXLWorksheet workSheet)
         {
-            var namesCells = GetIndexsByValue(workSheet, "Имя");
+            var namesCellsToRead = SheetWorker.GetIndexsByValue(workSheet, "Имя");
             List<string> pilotNames = new List<string>();
-            int row = namesCells[0].Address.RowNumber;
-            int column = namesCells[0].Address.ColumnNumber; 
+            int row = namesCellsToRead[0].Address.RowNumber;
+            int column = namesCellsToRead[0].Address.ColumnNumber; 
 
             for (int i = row + 1; i < workSheet.Column(column).LastCellUsed().Address.RowNumber + 1; i++)
             {
@@ -45,12 +47,11 @@ namespace Hekki
             }  
         }
 
-        public static void WriteValueInColumn(IXLWorksheet workSheet, List<Pilot> group, int numberRace)
+        public static void WriteValueInColumn(IXLWorksheet workSheet, List<Pilot> group, int row, int column, int numberRace)
         {
-            var namesCells = GetIndexsByValue(workSheet, "Пилоты");
-            int row = namesCells[numberRace].Address.RowNumber;
-            int column = namesCells[numberRace].Address.ColumnNumber; 
             int rowIndexToStart = workSheet.Column(column).LastCellUsed().Address.RowNumber + 1;
+            
+
             List<Pilot> fullGroup = new(group);
             if (fullGroup.Count < 8)
                 fullGroup = AddEmptysInGroup(group);
@@ -76,6 +77,17 @@ namespace Hekki
                 group.Add(new Pilot("1"));
             }
             return group;
+        }
+
+        public static void CleanColumns(IXLWorksheet workSheet, int column, int rowIndexToStart)
+        {
+            //workSheet.Range()
+            int lastIndex = rowIndexToStart + _rowsInGroup;
+
+
+            workSheet.Column(column).Cells($"{rowIndexToStart}:100").Clear(XLClearOptions.Contents);
+            workSheet.Column(column - 2).Cells($"{rowIndexToStart}:100").Clear(XLClearOptions.Contents);
+            
         }
     }
 }
