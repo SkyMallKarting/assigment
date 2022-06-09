@@ -8,11 +8,12 @@ namespace Hekki
         private static Random rng = new Random();  
         public static void Start(List<Pilot> pilots, List<int> numbers, int numberRace, IXLWorksheet workSheet)
         {
-
             var namesCellsToWrite = SheetWorker.GetIndexsByValue(workSheet, "Пилоты");
             int row = namesCellsToWrite[numberRace].Address.RowNumber + 1;
             int column = namesCellsToWrite[numberRace].Address.ColumnNumber; 
+
             SheetWorker.CleanColumns(workSheet, column, row);
+            
             List<List<Pilot>> groups = DevideByGroup(pilots, numbers);
             for (int i = 0; i < groups.Count; i++)
             {
@@ -90,14 +91,6 @@ namespace Hekki
             {
                 destination.Add((item));
             });
-        }
-
-        private static void Show(List<Pilot> group)
-        {
-            foreach (var pilot in group)
-            {
-                System.Console.WriteLine(pilot.GetInfo());
-            }
         }
     }
 }
